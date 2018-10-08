@@ -15,8 +15,8 @@
     var as = document.querySelectorAll("a[href^='#']");
     for (var i = 0,
     len = as.length; i < len; i++) {
-        //如果href="#"无意义，忽略
-        if (as[i].href == '#') {
+        //如果href="#"或者 href 不是 # 开头的都无意义，忽略
+        if (as[i].href == '#' || as[i].substring(0, 1) != '#') {
             continue;
         }
         var obj = document.querySelector(as[i].href);
