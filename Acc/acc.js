@@ -12,11 +12,12 @@
     },
     null);
 
+    //处理锚链接点击后的聚焦问题
     var as = document.querySelectorAll("a[href^='#']");
     for (var i = 0,
     len = as.length; i < len; i++) {
         //如果href="#"或者 href 不是 # 开头的都无意义，忽略
-        if (as[i].href == '#' || as[i].substring(0, 1) != '#') {
+        if (as[i].href == '#' || as[i].href.substring(0, 1) != '#') {
             continue;
         }
         var obj = document.querySelector(as[i].href);
